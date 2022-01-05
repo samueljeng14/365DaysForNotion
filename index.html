@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>365DaysForNotion</title>
+</head>
+<body>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+    .text{
+      font-family: Inter;
+      font-weight: 500;
+      color: rgba(0,0,0,0.8);
+      text-align: center;
+    }
+
+    .container{
+      width: 100%;
+      display: flex;
+      flex-direction: column
+    }
+    .title{
+      font-size: 32px;
+      color: rgba(0,0,0,0.5);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .days{
+      font-size: 72px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .sub{
+      font-size: 28px;
+      font-weight: 300;
+    }
+  </style>
+  <script type="text/javascript">
+    var now = new Date();
+    var start = new Date(now.getFullYear(), 0, 0);
+    var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+    var oneDay = 1000 * 60 * 60 * 24;
+    var day = Math.floor(diff / oneDay);
+    document.getElementById("days").innerHTML = day + " / 365";
+  </script>
+  <div class="container">
+    <div class="title text">2022</div>
+    <div class="days text" id="days"></div>
+    <div class="sub text">DAYS</div>
+  </div>
+</body>
+</html>
+
+
